@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.go",
+      "use": "@vercel/go"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "main.go"
+    }
+  ],
+  "buildCommand": "cd web && npm install && npm run build && cd .. && go build -o main .",
+  "installCommand": "echo 'Dependencies installed in buildCommand'"
+}
